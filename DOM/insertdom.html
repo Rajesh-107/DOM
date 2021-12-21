@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exploring Dom</title>
+    <style>
+        article{
+            border: 2px solid rgb(41, 157, 233);
+            border-radius: 20px;
+            margin: 5px;
+            padding: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <section>
+            <h3 title="I am the boss DOM">Exploring DOM</h3>
+            <article id="first-article">
+                <h3>article-1</h3>
+                <p title="I am the most important" class="author" id="bestseller">author-1</p>
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ad eum consectetur dolore nobis libero!</p>
+            </article>
+            <article class="special">
+                <h3>article-2</h3>
+                <p class="author">author-2</p>
+                <p class="description">In, quia illum velit earum, ut sequi amet necessitatibus repellendus, id libero consectetur ullam iure.</p>
+            </article>
+            <article class="special">
+                <h3>article-3</h3>
+                <p class="author">author-3</p>
+                <p class="description">Alias ea hic minus eius quia nam non aut libero voluptatum iusto? Voluptas, rem iste!</p>
+            </article>
+            <article id="bazar-article">
+                <h3>Bazar list</h3>
+                <ul id="bazar-list">
+                    <li>gift item-1</li>
+                    <li>gift item-2</li>
+                    <li>gift item-3</li>
+                    <li>gift item-4</li>
+                    <li>gift item-5</li>
+                    <li>gift item-6</li>
+                </ul>
+            </article>
+        </section> 
+        
+    </main>
+    <script>
+        document.body.style.backgroundColor = 'lightblue';
+        document.getElementById('bazar-list').style.backgroundColor =' red';
+        
+
+
+        const article = document.getElementById('first-article');
+        const newParagraph = document.createElement('p');
+        newParagraph.innerHTML = 'This is newline add by js';
+        article.appendChild(newParagraph);
+
+        //one more bazar item
+        const ul = document.getElementById('bazar-list')
+        const newUl = document.createElement('li');
+        newUl.innerHTML = 'gift item-7';
+        ul.appendChild(newUl);
+
+        const ul = document.getElementById('bazar-list');
+        const newUl = document.createElement('li');
+        newUl.innerHTML = 'new gift item';
+        ul.appendChild(newUl);
+    </script>
+</body>
+</html>
